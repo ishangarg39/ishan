@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+}
+
+.box_name{
+    padding: 4px;
+    left: 350%;
+    margin: 1rem;
+    position: relative;
+}
+.main_container{
+    display: grid;
+    background-color: aquamarine;
+   
+}
+.container2{
+   
+    display: flex;
+    padding: 4px;
+    width: 10%;
+   
+    margin-right: 10%;
+}
+.container{
+    background-color: rgb(27, 24, 24);
+    padding: 2rem;
+    margin:  10px;
+    position: relative;
+    display: flex;
+    left: 250%;
+    border: 1px solid white;
+}
+
+.draggable{
+    padding: 1rem;
+    margin: 4px;
+    background-color: #f8e0e0ec;
+    border: 1px solid bisque;
+    cursor: move;
+}
+
+.draggable.dragging{
+    opacity: .5;
+    background-color: aqua;
+}
+
+.button{
+    background-color: rgb(37, 35, 35) ;
+    color: rgb(255, 255, 255);
+    height: 2rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: 10px;
+}
