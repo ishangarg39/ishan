@@ -23,30 +23,24 @@ secondContainer.childNodes.forEach(node => {
 button.addEventListener('click', () => {
     console.log('Reset button clicked');
 
-    // Clear the contents of all containers
     containers.forEach(container => {
         container.innerHTML = '';
     });
 
-    // Restore the original state of the first container
     originalState1.forEach(item => {
         firstContainer.appendChild(item.cloneNode(true));
     });
 
-    // Restore the original state of the second container
     originalState2.forEach(item => {
         secondContainer.appendChild(item.cloneNode(true));
     });
 
-    // Reinitialize dragging functionality after a short delay
     setTimeout(() => {
         initializeDragging();
     }, 10);
 });
 
-// Function to initialize dragging functionality
 function initializeDragging() {
-    // Attach dragstart and dragend event listeners to draggable elements
     draggables.forEach(draggable => {
         draggable.addEventListener('dragstart', () => {
             draggable.classList.add('dragging');
@@ -58,14 +52,11 @@ function initializeDragging() {
         });
     });
 
-    // Attach dragover event listener to containers
     containers.forEach(container => {
         container.addEventListener('dragover', e => {
             e.preventDefault();
             const afterElement = getDragAfterElement(container, e.clientY);
-            console.log(afterElement)
             const draggable = document.querySelector('.dragging');
-            console.log(draggable)
             if (draggable !== null) {
                 if (afterElement === null) {
                     container.appendChild(draggable);
@@ -77,7 +68,6 @@ function initializeDragging() {
     });
 }
 
-// Initialize dragging functionality
 initializeDragging();
 
 function getDragAfterElement(container, y) {
